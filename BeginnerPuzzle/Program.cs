@@ -34,14 +34,39 @@ static void ExampleA()
 // Multiply the two numbers together and show the result
 // Divide the first number by the second number. Show the answer - whole number AND the REMAINDER
 // Divide the first number by the second number and get a fraction like 1.666  (look up divide cast to double)
-/*
+
 static void PuzzleA()
 {
     Console.WriteLine("\nPuzzle A");
     Console.WriteLine("~~~~~~~~~");
 
+    Console.WriteLine("Please enter a WHOLE number: ");
+    string? numInput1 = Console.ReadLine();
+    int num1 = int.Parse(numInput1);
+
+    Console.WriteLine("Please enter another WHOLE number: ");
+    int num2 = Convert.ToInt32(Console.ReadLine());
+
+    // Add
+    int addResult = num1 + num2;
+    Console.WriteLine($"{num1} + {num2} = {addResult}");
+
+    // Subtract
+    int subtractResult = num1 - num2;
+    Console.WriteLine($"{num1} - {num2} = {subtractResult}");
+
+    // Multiply
+    int multiplyResult = num1 * num2;
+    Console.WriteLine($"{num1} x {num2} = {multiplyResult}");
+
+    // Divide
+    int divideResult = num1 / num2;
+    int remainder = num1 % num2;
+    Console.WriteLine($"{num1} / {num2} = {divideResult} remainder {remainder}");
+
+    double divideDouble = (double)num1 / num2;
+    Console.WriteLine($"{num1} / {num2} = {divideDouble}");
 }
-*/
 
 
 static void ExampleB()
@@ -78,14 +103,24 @@ static void ExampleB()
 // Get the user's donation amount as a decimal
 // Elon Musk will match the amount the user enters
 // Output the user's donation amount, and the total donation after Elon matches it.
-/*
+
 static void PuzzleB()
 {
     Console.WriteLine("\nPuzzle B");
     Console.WriteLine("~~~~~~~~~");
 
+    Console.WriteLine("How much would you like to donate to Sex Addicts Anonymous?:");
+    string? moneyInput = Console.ReadLine();
+
+    decimal money = decimal.Parse(moneyInput);
+    decimal roundedMoney = Math.Round(money, 2);
+
+    decimal matchedTotal = roundedMoney * 2;
+
+    Console.WriteLine($"You have donated ${roundedMoney} to Sex Addicts Anonymous, and Elon Musk has matched the donation!");
+    Console.WriteLine($"Total Donated: ${matchedTotal}");
+
 }
-*/
 
 
 static void ExampleC()
@@ -111,15 +146,26 @@ static void ExampleC()
 // Calculate what they will pay in tax
 // The tax department works using whole numbers, so if they enter a floating point number round it up to a whole number.
 // Tell them the bad news. Let them know the tax percentage they are paying and how much they will pay in tax.
-/*
 static void PuzzleC()
 {
     Console.WriteLine("\nPuzzle C");
     Console.WriteLine("~~~~~~~~~");
 
+    Console.WriteLine("Tax Department");
+    Console.WriteLine("You must enter your yearly salary, or you will be arrested: ");
+    string? salaryInput = Console.ReadLine();
 
+    decimal salary = decimal.Parse(salaryInput);
+    decimal roundedSalary = Math.Round(salary, 0);           // Tax dept usually just goes by whole numbers
+
+    Random randy = new Random();
+    int tax = randy.Next(30, 100);
+
+    decimal taxToPay = roundedSalary * tax / 100;
+
+    Console.WriteLine($"You need to pay {tax}% tax, that's ${taxToPay} you owe us or else");
 }
-*/
+
 
 
 // Run the puzzles
