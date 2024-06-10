@@ -170,14 +170,14 @@ static void PuzzleC()
 
 // Run the puzzles
 
-ExampleA();
-//PuzzleA();
+//ExampleA();
+PuzzleA();
 
-ExampleB();
-//PuzzleB();
+//ExampleB();
+PuzzleB();
 
-ExampleC();
-//PuzzleC();
+//ExampleC();
+PuzzleC();
 
 
 
